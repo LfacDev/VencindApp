@@ -27,7 +27,7 @@ public class Servicio {
     private String descripcion;
 
     @OneToMany(mappedBy = "servicio")
-    private Set<Calificacion> calificacions = new LinkedHashSet<>();
+    private Set<Calificacion> calificacion = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "servicio")
     private Set<Chat> chats = new LinkedHashSet<>();
@@ -74,11 +74,11 @@ public class Servicio {
     }
 
     public Set<Calificacion> getCalificacions() {
-        return calificacions;
+        return calificacion;
     }
 
     public void setCalificacions(Set<Calificacion> calificacions) {
-        this.calificacions = calificacions;
+        this.calificacion = calificacions;
     }
 
     public Set<Chat> getChats() {

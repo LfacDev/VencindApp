@@ -27,6 +27,18 @@ public class Pago {
     @OneToMany(mappedBy = "pago")
     private Set<Reserva> reservas = new LinkedHashSet<>();
 
+    @Lob
+    @Column(name = "estado")
+    private String estado;
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -17,8 +17,13 @@ public class Favorito {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "user_id")
-    private Usuario user;
+    @JoinColumn(name = "cliente_id")
+    private Usuario cliente;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "trabajador_id")
+    private Usuario trabajdor;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -37,12 +42,20 @@ public class Favorito {
         this.id = id;
     }
 
-    public Usuario getUser() {
-        return user;
+    public Usuario getCliente() {
+        return cliente;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setCliente(Usuario cliente) {
+        this.cliente = cliente;
+    }
+
+    public Usuario getTrabajdor() {
+        return trabajdor;
+    }
+
+    public void setTrabajdor(Usuario trabajdor) {
+        this.trabajdor = trabajdor;
     }
 
     public Servicio getServicio() {
