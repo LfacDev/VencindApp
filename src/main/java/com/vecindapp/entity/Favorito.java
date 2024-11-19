@@ -23,7 +23,7 @@ public class Favorito {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "trabajador_id")
-    private Usuario trabajdor;
+    private Usuario trabajador;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -51,11 +51,11 @@ public class Favorito {
     }
 
     public Usuario getTrabajdor() {
-        return trabajdor;
+        return trabajador;
     }
 
     public void setTrabajdor(Usuario trabajdor) {
-        this.trabajdor = trabajdor;
+        this.trabajador = trabajdor;
     }
 
     public Servicio getServicio() {

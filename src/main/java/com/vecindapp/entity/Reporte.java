@@ -20,7 +20,7 @@ public class Reporte {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "user_id")
-    private Usuario user;
+    private Usuario usuario;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -52,11 +52,11 @@ public class Reporte {
     }
 
     public Usuario getUser() {
-        return user;
+        return usuario;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setUser(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public Reserva getReserva() {

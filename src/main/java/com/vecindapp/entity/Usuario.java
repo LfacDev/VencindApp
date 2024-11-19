@@ -16,7 +16,7 @@ public class Usuario {
     private Integer id;
 
     @Column(name = "nombre", nullable = false, length = 100)
-    private String nombre;
+    private String name;
 
     @Column(name = "email", nullable = false, length = 100)
     private String email;
@@ -51,8 +51,11 @@ public class Usuario {
     @OneToMany(mappedBy = "user")
     private Set<Documento> documentos = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
-    private Set<Favorito> favoritos = new LinkedHashSet<>();
+    @OneToMany(mappedBy = "cliente")
+    private Set<Favorito> favoritoC = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "trabajador")
+    private Set<Favorito> favoritoT = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "user")
     private Set<Mensaje> mensajes = new LinkedHashSet<>();
@@ -60,7 +63,7 @@ public class Usuario {
     @OneToMany(mappedBy = "user")
     private Set<Notificacion> notificaciones = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "usuario")
     private Set<Reporte> reportes = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "user")
@@ -84,11 +87,11 @@ public class Usuario {
     }
 
     public String getNombre() {
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -171,12 +174,20 @@ public class Usuario {
         this.documentos = documentos;
     }
 
-    public Set<Favorito> getFavoritos() {
-        return favoritos;
+    public Set<Favorito> getFavoritoC() {
+        return favoritoC;
     }
 
-    public void setFavoritos(Set<Favorito> favoritos) {
-        this.favoritos = favoritos;
+    public void setFavoritoC(Set<Favorito> favoritoC) {
+        this.favoritoC = favoritoC;
+    }
+
+    public Set<Favorito> getFavoritoT() {
+        return favoritoT;
+    }
+
+    public void setFavoritoT(Set<Favorito> favoritoT) {
+        this.favoritoT = favoritoT;
     }
 
     public Set<Mensaje> getMensajes() {
