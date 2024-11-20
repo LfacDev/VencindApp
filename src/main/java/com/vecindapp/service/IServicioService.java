@@ -1,13 +1,12 @@
-package com.vecindapp.repository.dao;
+package com.vecindapp.service;
 
 import com.vecindapp.entity.Calificacion;
 import com.vecindapp.entity.Categoria;
 import com.vecindapp.entity.Servicio;
-import com.vecindapp.entity.Usuario;
 
 import java.util.List;
 
-public interface IServicioDAO {
+public interface IServicioService {
 
     List<Servicio> InsertServicio(Servicio servicio);
     Servicio UpdateServicio(Servicio servicio);
